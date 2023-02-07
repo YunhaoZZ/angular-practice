@@ -14,17 +14,22 @@
       BONUS: hook up the rent buttons below
      -->
     <rental-card
-      [numRented]="4"
-      [listRented]="[
-        'Cats',
-        ' Howard the Duck',
-        ' Jack and Jill',
-        ' Batman and Robin'
-      ]"
+      [numRented]="num_of_rented"
+      [listRented]="list_of_rented"
     ></rental-card>
   </div>
 </div>
 
-<app-movie-tile [movie]="wingCommander"></app-movie-tile>
+<div style="display:flex; justify-content:space-around">
+  <app-movie-tile
+    (onRentAdded)="UpdateRentalList($event)"
+    [movie]="wingCommander"
+    style="display:flex; justify-content:space-around"
+  ></app-movie-tile>
 
-<app-movie-tile [movie]="theRoom"></app-movie-tile>
+  <app-movie-tile
+    (onRentAdded)="UpdateRentalList($event)"
+    [movie]="theRoom"
+    style="display:flex; justify-content:space-around"
+  ></app-movie-tile>
+</div>

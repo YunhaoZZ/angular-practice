@@ -9,12 +9,17 @@ export class AppComponent {
   num_of_rented: number = 4;
   list_of_rented: string[] = [
     'Cats',
-    ' Howard the Duck',
-    ' Jack and Jill',
-    ' Batman and Robin',
+    'Howard the Duck',
+    'Jack and Jill',
+    'Batman and Robin',
   ];
 
   constructor() {}
+
+  UpdateRentalList(newMovie: string) {
+    this.list_of_rented.push(newMovie);
+    this.num_of_rented += 1;
+  }
 
   wingCommander = {
     title: 'Wing Commander',
